@@ -74,46 +74,6 @@ const steps = [
   },
 ];
 
-const tiers = [
-  {
-    name: "AI Receptionist",
-    price: "$299",
-    period: "/mo",
-    features: ["24/7 call answering", "Appointment booking", "PMS integration", "2-location max"],
-    cta: "Start Now",
-    featured: false,
-  },
-  {
-    name: "Full Patient Engine",
-    price: "$870",
-    period: "/mo",
-    features: [
-      "Everything in AI Receptionist",
-      "AI Patient Recall (calls + SMS)",
-      "Insurance verification",
-      "Meta Ads + optimization",
-      "Unlimited locations",
-      "Dedicated human oversight",
-    ],
-    cta: "Book Demo",
-    featured: true,
-  },
-  {
-    name: "Enterprise DSO",
-    price: "Custom",
-    period: "",
-    features: [
-      "Everything in Full Engine",
-      "White-glove onboarding",
-      "Dedicated account manager",
-      "Custom AI training",
-      "Volume discounts",
-    ],
-    cta: "Contact Sales",
-    featured: false,
-  },
-];
-
 function Logo() {
   return (
     <a href="#top" className="flex items-center gap-2.5">
@@ -484,52 +444,91 @@ function Index() {
               Simple, transparent pricing
             </h2>
             <p className="mt-5 text-lg text-muted-foreground">
-              No hidden fees. No long-term contracts. Scale as you grow.
+              Simple pricing. No management fee to start.
             </p>
           </Reveal>
 
-          <div className="mt-14 grid items-start gap-6 lg:grid-cols-3">
-            {tiers.map((t, i) => (
-              <Reveal
-                key={t.name}
-                delay={i * 100}
-                className={
-                  t.featured
-                    ? "relative rounded-3xl border border-primary/60 bg-surface p-8 shadow-glow"
-                    : "rounded-3xl border border-border bg-surface p-8"
-                }
-              >
-                {t.featured && (
-                  <span className="absolute -top-3 left-8 rounded-full bg-primary px-3 py-1 font-mono text-[10px] font-bold tracking-[0.14em] text-primary-foreground uppercase">
-                    Most Popular
-                  </span>
-                )}
-                <h3 className="font-display text-lg font-bold">{t.name}</h3>
-                <p className="mt-5 font-display text-4xl font-bold tracking-tighter">
-                  {t.price}
-                  <span className="text-lg font-normal text-muted-foreground">{t.period}</span>
-                </p>
-                <ul className="mt-8 space-y-3.5 text-sm text-muted-foreground">
-                  {t.features.map((f) => (
-                    <li key={f} className="flex gap-2.5">
-                      <span className="text-primary">✓</span>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href="#cta"
-                  className={
-                    t.featured
-                      ? "mt-9 flex justify-center rounded-full bg-primary py-3 font-display font-bold text-primary-foreground transition-transform hover:scale-[1.02] active:scale-95"
-                      : "mt-9 flex justify-center rounded-full border border-border-strong py-3 font-display font-bold transition-colors hover:bg-surface-raised"
-                  }
-                >
-                  {t.cta}
-                </a>
-              </Reveal>
-            ))}
+          <div className="mt-14 grid items-start gap-6 lg:grid-cols-2">
+            <Reveal className="rounded-3xl border border-border bg-surface p-8">
+              <p className="font-mono text-xs tracking-[0.14em] text-primary uppercase">
+                Month 1 · Onboarding
+              </p>
+              <div className="mt-5 flex items-baseline gap-2">
+                <span className="font-display text-5xl font-bold tracking-tighter">$500</span>
+                <span className="text-muted-foreground">one-time</span>
+              </div>
+              <p className="mt-4 text-muted-foreground">Onboarding, audit &amp; full system build</p>
+              <dl className="mt-8 divide-y divide-border border-y border-border text-sm">
+                <div className="flex items-center justify-between gap-4 py-4">
+                  <dt className="text-muted-foreground">Management fee</dt>
+                  <dd className="font-semibold">$0</dd>
+                </div>
+                <div className="flex items-center justify-between gap-4 py-4">
+                  <dt className="text-muted-foreground">Meta ads management</dt>
+                  <dd className="font-semibold">Included</dd>
+                </div>
+                <div className="flex items-center justify-between gap-4 py-4">
+                  <dt className="text-muted-foreground">AI nurture engine</dt>
+                  <dd className="font-semibold">Included</dd>
+                </div>
+              </dl>
+            </Reveal>
+
+            <Reveal delay={100} className="relative rounded-3xl border border-primary/60 bg-surface p-8 shadow-glow">
+              <span className="absolute -top-3 left-8 rounded-full bg-primary px-3 py-1 font-mono text-[10px] font-bold tracking-[0.14em] text-primary-foreground uppercase">
+                Ongoing service
+              </span>
+              <p className="font-mono text-xs tracking-[0.14em] text-primary uppercase">
+                Month 2 onwards
+              </p>
+              <div className="mt-5 flex items-baseline gap-2">
+                <span className="font-display text-5xl font-bold tracking-tighter">$1,800</span>
+                <span className="text-muted-foreground">per month</span>
+              </div>
+              <div className="mt-8 divide-y divide-border border-y border-border text-sm">
+                <div className="flex items-start justify-between gap-4 py-4">
+                  <div>
+                    <p className="font-semibold">AI nurture engine</p>
+                    <p className="mt-1 text-muted-foreground">Calls, SMS, voicemail &amp; email</p>
+                  </div>
+                  <span className="font-semibold">$1,400</span>
+                </div>
+                <div className="flex items-start justify-between gap-4 py-4">
+                  <div>
+                    <p className="font-semibold">Meta ads creation &amp; management</p>
+                  </div>
+                  <span className="font-semibold">$400</span>
+                </div>
+                <div className="flex items-center justify-between gap-4 py-4 text-base">
+                  <p className="font-display font-bold">Total monthly fee to Hyperscale</p>
+                  <span className="font-display font-bold">$1,800</span>
+                </div>
+              </div>
+            </Reveal>
           </div>
+
+          <Reveal className="mt-10 grid gap-8 border-t border-border pt-8 text-sm text-muted-foreground md:grid-cols-2">
+            <div>
+              <p className="font-display font-bold text-foreground">Plus your Meta ad budget, paid directly to Meta.</p>
+              <p className="mt-2">
+                Your ad budget is never marked up. You set the monthly spend, it goes straight to Meta,
+                and every dollar of it buys reach.
+              </p>
+            </div>
+            <div>
+              <p className="font-display font-bold text-foreground">What the monthly fee covers</p>
+              <p className="mt-2">
+                <span className="font-semibold text-foreground">Advertising — $400:</span> Ad creative
+                production, copywriting, campaign build, audience and budget structure, daily monitoring,
+                creative testing and performance reporting.
+              </p>
+              <p className="mt-3">
+                <span className="font-semibold text-foreground">Nurture — $1,400:</span> AI calling,
+                conversational and SMS agents, email and voicemail sequences, calendar integration,
+                confirmation and reminder flows, plus human review of AI conversations.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 
