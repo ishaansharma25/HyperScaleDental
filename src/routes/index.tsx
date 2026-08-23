@@ -74,17 +74,6 @@ const steps = [
   },
 ];
 
-const integrations = [
-  "Open Dental",
-  "Dentrix",
-  "Eaglesoft",
-  "Denticon",
-  "Curve",
-  "Dentrix Ascend",
-  "CareStack",
-  "iDentalSoft",
-];
-
 const tiers = [
   {
     name: "AI Receptionist",
@@ -434,25 +423,6 @@ function Index() {
               </Reveal>
             ))}
           </ol>
-        </div>
-      </section>
-
-      {/* Integrations marquee */}
-      <section className="border-y border-border bg-surface/40 py-12">
-        <p className="px-6 text-center font-mono text-xs tracking-[0.18em] text-muted-foreground uppercase">
-          Built for DSOs · Integrates with your PMS
-        </p>
-        <div className="group relative mt-8 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_12%,black_88%,transparent)]">
-          <div className="hd-marquee flex w-max gap-14 pr-14 group-hover:[animation-play-state:paused]">
-            {[...integrations, ...integrations].map((name, i) => (
-              <span
-                key={i}
-                className="font-display text-xl font-bold tracking-tight whitespace-nowrap text-muted-foreground transition-colors hover:text-foreground"
-              >
-                {name}
-              </span>
-            ))}
-          </div>
         </div>
       </section>
 
