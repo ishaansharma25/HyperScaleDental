@@ -13,7 +13,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "AI patient recall, ad optimization and 24/7 call answering for DSOs. 16% recall conversion, $247K production recovered in 90 days. Live in 48 hours.",
+          "AI patient recall, ad optimization and 24/7 call answering for DSOs. 22% recall conversion, $247K production recovered in 90 days. Live in 48 hours.",
       },
       { property: "og:title", content: "HyperscaleDental — AI That Books Patients, Not Leads" },
       {
@@ -74,6 +74,8 @@ const steps = [
   },
 ];
 
+const calendlyUrl = "https://calendly.com/tanyasharma0195/30min";
+
 function Logo() {
   return (
     <a href="#top" className="flex items-center gap-2.5">
@@ -106,7 +108,9 @@ function Index() {
             </a>
           </div>
           <a
-            href="#cta"
+            href={calendlyUrl}
+            target="_blank"
+            rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 font-display text-sm font-bold text-primary-foreground transition-transform hover:scale-[1.03] active:scale-95"
           >
             Book a Demo <ArrowRight className="size-4" />
@@ -153,7 +157,9 @@ function Index() {
             <Reveal delay={240}>
               <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <a
-                  href="#cta"
+                  href={calendlyUrl}
+                  target="_blank"
+                  rel="noreferrer"
                   className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-7 py-3.5 font-display font-bold text-primary-foreground shadow-glow transition-transform hover:scale-[1.02] active:scale-95"
                 >
                   Get Your new 30+ Patients <ArrowRight className="size-4" />
@@ -226,7 +232,7 @@ function Index() {
         <div className="relative mx-auto mt-24 grid max-w-6xl gap-px overflow-hidden rounded-3xl border border-border bg-border sm:grid-cols-3">
           {[
             {
-              value: <CountUp to={16} suffix="%" />,
+              value: <CountUp to={22} suffix="%" />,
               label: "recall conversion (vs. 3% for humans)",
             },
             {
@@ -548,7 +554,9 @@ function Index() {
               answer the phone. Get your first 10 patients with Hyperscale Dental.
             </p>
             <a
-              href="#top"
+              href={calendlyUrl}
+              target="_blank"
+              rel="noreferrer"
               className="mt-10 inline-flex items-center gap-2 rounded-full bg-primary px-9 py-4 font-display text-lg font-bold text-primary-foreground shadow-glow transition-transform hover:scale-[1.02] active:scale-95"
             >
               Book Your Demo Now <ArrowRight className="size-5" />
