@@ -45,7 +45,7 @@ export function Typewriter({
   }, [display, isDeleting, pause, phraseIndex, sequence, speed]);
 
   return (
-    <span className="inline-block min-w-[16ch] whitespace-nowrap text-primary">
+    <span className="inline-block max-w-full whitespace-normal text-primary">
       {display}
       <span className="hd-caret ml-0.5 inline-block h-[0.82em] w-[3px] translate-y-[0.08em] bg-primary align-middle" />
     </span>

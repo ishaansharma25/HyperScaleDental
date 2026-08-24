@@ -129,11 +129,9 @@ function Index() {
           <div className="mx-auto max-w-3xl text-center">
 
             <Reveal delay={80}>
-              <h1 className="mt-7 text-5xl leading-[0.95] font-bold tracking-tighter text-balance md:text-6xl lg:text-7xl">
-                <span className="inline-flex items-baseline justify-center gap-2 whitespace-nowrap font-display text-foreground">
-                  <span className="font-mono text-[11px] font-medium tracking-[0.18em] text-muted-foreground uppercase">
-                    We
-                  </span>
+              <h1 className="mt-7 text-3xl leading-tight font-bold tracking-tighter text-balance sm:text-5xl md:text-6xl lg:text-7xl">
+                <span className="flex flex-col items-center justify-center gap-1 font-display text-foreground">
+                  <span className="text-[inherit] uppercase">WE</span>
                   <Typewriter
                     texts={[
                       "generate ads for you",
