@@ -131,7 +131,7 @@ function Index() {
             <Reveal delay={80}>
               <h1 className="mt-7 text-3xl leading-tight font-bold tracking-tighter text-balance sm:text-5xl md:text-6xl lg:text-7xl">
                 <span className="flex flex-col items-center justify-center gap-1 font-display text-foreground">
-                  <span className="text-[inherit] uppercase">WE</span>
+                  <span className="text-[inherit]">We</span>
                   <Typewriter
                     texts={[
                       "generate ads for you",
