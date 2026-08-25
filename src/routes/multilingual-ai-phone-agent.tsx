@@ -7,12 +7,14 @@ import {
   Globe2,
   Languages,
   MessageCircle,
+  Pause,
   PhoneCall,
+  Play,
   ShieldCheck,
   Sparkles,
   Volume2,
 } from "lucide-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Reveal } from "@/components/Reveal";
 
 const calendlyUrl = "https://calendly.com/tanyasharma0195/30min";
@@ -93,6 +95,18 @@ function Logo() {
 
 function MultilingualPhoneAgent() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  const toggleAudio = () => {
+    if (!audioRef.current) return;
+
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      void audioRef.current.play();
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -156,15 +170,6 @@ function MultilingualPhoneAgent() {
                   See how it works
                 </a>
               </div>
-                <div className="mt-5">
-                  <p className="mb-2 font-mono text-[10px] tracking-[0.14em] text-muted-foreground uppercase">
-                    Hear a real patient call
-                  </p>
-                  <audio controls preload="metadata" className="h-10 w-full">
-                    <source src="/recording_pearl.wav" type="audio/wav" />
-                    Your browser does not support audio playback.
-                  </audio>
-                </div>
               <div className="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-sm text-muted-foreground">
                 <span className="inline-flex items-center gap-2">
                   <ShieldCheck className="size-4 text-primary" /> HIPAA-conscious workflows
@@ -197,7 +202,7 @@ function MultilingualPhoneAgent() {
                     <p className="font-mono text-[10px] tracking-[0.15em] text-muted-foreground uppercase">
                       Patient
                     </p>
-                    <p className="mt-2 font-display text-xl font-bold">Maria G.</p>
+                    <p className="mt-2 font-display text-xl font-bold">Jesus</p>
                     <p className="mt-1 text-sm text-muted-foreground">Speaking Spanish</p>
                   </div>
                   <Languages className="size-9 text-primary" />
@@ -205,7 +210,7 @@ function MultilingualPhoneAgent() {
                     <p className="font-mono text-[10px] tracking-[0.15em] text-muted-foreground uppercase">
                       Agent
                     </p>
-                    <p className="mt-2 font-display text-xl font-bold">Nova</p>
+                    <p className="mt-2 font-display text-xl font-bold">Diego</p>
                     <p className="mt-1 text-sm text-muted-foreground">Responding in Spanish</p>
                   </div>
                 </div>
@@ -217,21 +222,44 @@ function MultilingualPhoneAgent() {
                     ].map((height, index) => (
                       <span
                         key={index}
-                        className="hd-wave block w-1.5 rounded-full bg-primary"
+                        className={`${isPlaying ? "hd-wave" : "opacity-60"} block w-1.5 rounded-full bg-primary`}
                         style={{ height: `${height}px`, animationDelay: `${index * 45}ms` }}
                       />
                     ))}
                   </div>
                   <div className="mt-5 flex items-center justify-between text-xs text-muted-foreground">
-                    <span className="inline-flex items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={toggleAudio}
+                      aria-label={isPlaying ? "Pause patient call" : "Play patient call"}
+                      className="inline-flex items-center gap-2 transition-colors hover:text-foreground"
+                    >
+                      <span className="grid size-7 place-items-center rounded-full bg-primary text-primary-foreground">
+                        {isPlaying ? (
+                          <Pause className="size-3.5" />
+                        ) : (
+                          <Play className="ml-0.5 size-3.5 fill-current" />
+                        )}
+                      </span>
                       <Volume2 className="size-3.5 text-primary" /> Natural conversation
-                    </span>
-                    <span>01:42</span>
+                    </button>
+                    <span>2:29</span>
                   </div>
                 </div>
+                <audio
+                  ref={audioRef}
+                  preload="metadata"
+                  className="hidden"
+                  onPlay={() => setIsPlaying(true)}
+                  onPause={() => setIsPlaying(false)}
+                  onEnded={() => setIsPlaying(false)}
+                >
+                  <source src="/recording_pearl.wav" type="audio/wav" />
+                  Your browser does not support audio playback.
+                </audio>
                 <div className="mt-5 flex items-center gap-3 rounded-xl border border-primary/20 bg-primary/5 px-4 py-3 text-sm">
                   <Check className="size-4 shrink-0 text-primary" />
-                  <span>Appointment held for Thursday at 10:30 AM</span>
+                  <span>Appointment booked for Saturday at 10:00 AM</span>
                 </div>
               </div>
             </Reveal>
