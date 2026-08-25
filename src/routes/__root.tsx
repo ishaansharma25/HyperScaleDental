@@ -93,7 +93,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/hyperscale-favicon.svg", type: "image/svg+xml" },
+      { rel: "icon", href: "/HyperScale_Logo.png", type: "image/png" },
     ],
   }),
 
