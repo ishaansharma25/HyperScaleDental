@@ -6,8 +6,8 @@ import {
   ChevronDown,
   Globe2,
   Languages,
+  Menu,
   MessageCircle,
-  MoreVertical,
   Pause,
   PhoneCall,
   Play,
@@ -180,7 +180,7 @@ function MultilingualPhoneAgent() {
             onClick={() => setMobileNavOpen((isOpen) => !isOpen)}
             className="ml-2 grid size-10 shrink-0 place-items-center rounded-md border border-border-strong bg-surface text-foreground md:hidden"
           >
-            {mobileNavOpen ? <X className="size-5" /> : <MoreVertical className="size-5" />}
+            {mobileNavOpen ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
         </nav>
         {mobileNavOpen && (

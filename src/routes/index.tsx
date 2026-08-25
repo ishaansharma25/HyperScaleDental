@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, MoreVertical, Play, X } from "lucide-react";
+import { ArrowRight, Menu, Play, X } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { Typewriter } from "@/components/Typewriter";
 import { CountUp } from "@/components/CountUp";
@@ -163,7 +163,7 @@ function Index() {
             onClick={() => setMobileNavOpen((isOpen) => !isOpen)}
             className="ml-2 grid size-10 shrink-0 place-items-center rounded-md border border-border-strong bg-surface text-foreground md:hidden"
           >
-            {mobileNavOpen ? <X className="size-5" /> : <MoreVertical className="size-5" />}
+            {mobileNavOpen ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
         </nav>
         {mobileNavOpen && (
