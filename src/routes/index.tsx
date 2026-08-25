@@ -559,7 +559,7 @@ function Index() {
               Book Your Demo Now <ArrowRight className="size-5" />
             </a>
             <p className="mt-6 font-mono text-[11px] tracking-[0.14em] text-muted-foreground uppercase">
-              No commitment · Setup in 48 hours · HIPAA compliant
+              No commitment · Setup in 7 days · HIPAA compliant
             </p>
           </div>
         </Reveal>
