@@ -78,7 +78,7 @@ const calendlyUrl = "https://calendly.com/tanyasharma0195/30min";
 
 function Logo() {
   return (
-    <a href="#top" className="flex h-20 w-52 items-center">
+    <a href="#top" className="flex h-24 w-64 max-w-[52vw] items-center sm:max-w-none">
       <img
         src="/HyperScale_Logo.png"
         alt="Hyperscale Ops AI Marketing Company"
@@ -93,7 +93,7 @@ function Index() {
     <div id="top" className="min-h-screen bg-background">
       {/* Nav */}
       <header className="sticky top-0 z-50 border-b border-border bg-background/75 backdrop-blur-xl">
-        <nav className="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
+        <nav className="mx-auto flex h-24 max-w-6xl items-center justify-between px-6">
           <Logo />
           <div className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
             <a href="#problem" className="transition-colors hover:text-foreground">
