@@ -20,18 +20,18 @@ import { Reveal } from "@/components/Reveal";
 const calendlyUrl = "https://calendly.com/tanyasharma0195/30min";
 
 const languages = [
-  ["English", "Hello"],
-  ["Spanish", "Hola"],
-  ["Portuguese", "Ola"],
-  ["French", "Bonjour"],
-  ["Korean", "Annyeong"],
-  ["Vietnamese", "Xin chao"],
-  ["Mandarin", "Ni hao"],
-  ["Tagalog", "Kamusta"],
-  ["Hindi", "Namaste"],
-  ["Arabic", "Marhaban"],
-  ["German", "Hallo"],
-  ["Italian", "Ciao"],
+  ["🇺🇸", "English", "Hello"],
+  ["🇪🇸", "Spanish", "Hola"],
+  ["🇵🇹", "Portuguese", "Ola"],
+  ["🇫🇷", "French", "Bonjour"],
+  ["🇰🇷", "Korean", "Annyeong"],
+  ["🇻🇳", "Vietnamese", "Xin chao"],
+  ["🇨🇳", "Mandarin", "Ni hao"],
+  ["🇵🇭", "Tagalog", "Kamusta"],
+  ["🇮🇳", "Hindi", "Namaste"],
+  ["🇸🇦", "Arabic", "Marhaban"],
+  ["🇩🇪", "German", "Hallo"],
+  ["🇮🇹", "Italian", "Ciao"],
 ];
 
 const faqs = [
@@ -375,12 +375,14 @@ function MultilingualPhoneAgent() {
               </div>
             </Reveal>
             <Reveal delay={100} className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-              {languages.map(([language, greeting]) => (
+              {languages.map(([flag, language, greeting]) => (
                 <div
                   key={language}
                   className="rounded-xl border border-border bg-surface p-5 transition-colors hover:border-primary/50"
                 >
-                  <Globe2 className="size-5 text-primary" />
+                  <span className="text-3xl leading-none" aria-hidden="true">
+                    {flag}
+                  </span>
                   <p className="mt-7 font-display font-bold">{language}</p>
                   <p className="mt-1 text-sm text-muted-foreground">{greeting}</p>
                 </div>
