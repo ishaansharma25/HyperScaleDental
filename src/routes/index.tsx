@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Menu, Play, X } from "lucide-react";
+import { ArrowRight, MoreVertical, Play, X } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { Typewriter } from "@/components/Typewriter";
 import { CountUp } from "@/components/CountUp";
@@ -147,16 +147,6 @@ function Index() {
               Multilingual AI
             </a>
           </div>
-          <button
-            type="button"
-            aria-expanded={mobileNavOpen}
-            aria-controls="mobile-navigation"
-            aria-label={mobileNavOpen ? "Close navigation menu" : "Open navigation menu"}
-            onClick={() => setMobileNavOpen((isOpen) => !isOpen)}
-            className="ml-auto mr-2 grid size-10 place-items-center rounded-md border border-border-strong bg-surface text-foreground md:hidden"
-          >
-            {mobileNavOpen ? <X className="size-5" /> : <Menu className="size-5" />}
-          </button>
           <a
             href={calendlyUrl}
             target="_blank"
@@ -165,6 +155,16 @@ function Index() {
           >
             Book a Demo <ArrowRight className="size-4" />
           </a>
+          <button
+            type="button"
+            aria-expanded={mobileNavOpen}
+            aria-controls="mobile-navigation"
+            aria-label={mobileNavOpen ? "Close navigation menu" : "Open navigation menu"}
+            onClick={() => setMobileNavOpen((isOpen) => !isOpen)}
+            className="ml-2 grid size-10 shrink-0 place-items-center rounded-md border border-border-strong bg-surface text-foreground md:hidden"
+          >
+            {mobileNavOpen ? <X className="size-5" /> : <MoreVertical className="size-5" />}
+          </button>
         </nav>
         {mobileNavOpen && (
           <div id="mobile-navigation" className="border-t border-border px-6 py-3 md:hidden">
