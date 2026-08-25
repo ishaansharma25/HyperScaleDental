@@ -83,7 +83,7 @@ export const Route = createFileRoute("/multilingual-ai-phone-agent")({
 
 function Logo() {
   return (
-    <a href="/" className="flex h-16 w-48 items-center">
+    <a href="/" className="flex h-24 w-64 max-w-[52vw] items-center sm:max-w-none">
       <img
         src="/HyperScale_Logo.png"
         alt="Hyperscale Ops AI Marketing Company"
@@ -112,7 +112,7 @@ function MultilingualPhoneAgent() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl">
-        <nav className="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
+        <nav className="mx-auto flex h-24 max-w-6xl items-center justify-between px-6">
           <Logo />
           <div className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
             <a
