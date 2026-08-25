@@ -220,8 +220,8 @@ function Index() {
 
             <Reveal delay={160}>
               <p className="mx-auto mt-7 max-w-[52ch] text-lg leading-relaxed text-muted-foreground">
-                Stop guessing if your ads work. Stop wasting staff time on phones. We handle
-                everything — from Instagram scroller to scheduled appointment.
+                Stop guessing which ads bring patients in. Stop wasting staff time answering phones.
+                We turn attention on Instagram or Facebook into booked appointments.
               </p>
             </Reveal>
 
