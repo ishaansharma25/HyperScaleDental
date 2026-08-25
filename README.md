@@ -172,7 +172,7 @@ Stop wasting money on ads that don't convert and staff that's too busy to answer
 
 Book Your Demo Now
 
-No commitment · Setup in 48 hours · HIPAA compliant
+No commitment · Setup in 7 days · HIPAA compliant
 
 HyperscaleDental
 

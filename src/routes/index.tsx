@@ -405,20 +405,20 @@ function Index() {
               {
                 quote:
                   "1,700 calls answered in 90 days and 184 appointments booked. That volume used to hit voicemail.",
-                name: "Dr. R. Page",
-                role: "2-location group practice",
+                name: "Fabian Fernandez",
+                role: "Front Desk, DM Dentistry, San Ramon",
               },
               {
                 quote:
                   "Our recall list went from a spreadsheet nobody touched to a queue that fills the schedule every week.",
-                name: "S. Mudumba",
-                role: "Operations, family dentistry",
+                name: "Dr. Sanjeev Sharma",
+                role: "2-dental Practice Owner, Bay Area",
               },
               {
                 quote:
                   "The front desk finally stops mid-day. Calls get answered while they're with a patient in the chair.",
-                name: "Dr. A. Nour",
-                role: "DSO regional director",
+                name: "Dr. Kohli",
+                role: "Pearl Dental, San Jose",
               },
             ].map((t, i) => (
               <Reveal
@@ -479,7 +479,7 @@ function Index() {
 
             <Reveal delay={100} className="relative rounded-3xl border border-primary/60 bg-surface p-8 shadow-glow">
               <span className="absolute -top-3 left-8 rounded-full bg-primary px-3 py-1 font-mono text-[10px] font-bold tracking-[0.14em] text-primary-foreground uppercase">
-                Ongoing service
+                Second month onwards
               </span>
               <p className="font-mono text-xs tracking-[0.14em] text-primary uppercase">
                 Month 2 onwards
@@ -494,13 +494,13 @@ function Index() {
                     <p className="font-semibold">AI nurture engine</p>
                     <p className="mt-1 text-muted-foreground">Calls, SMS, voicemail &amp; email</p>
                   </div>
-                  <span className="font-semibold">$1,400</span>
+                  <span className="font-semibold">$1,000</span>
                 </div>
                 <div className="flex items-start justify-between gap-4 py-4">
                   <div>
                     <p className="font-semibold">Meta ads creation &amp; management</p>
                   </div>
-                  <span className="font-semibold">$400</span>
+                  <span className="font-semibold">$800</span>
                 </div>
                 <div className="flex items-center justify-between gap-4 py-4 text-base">
                   <p className="font-display font-bold">Total monthly fee to Hyperscale</p>
@@ -521,12 +521,12 @@ function Index() {
             <div>
               <p className="font-display font-bold text-foreground">What the monthly fee covers</p>
               <p className="mt-2">
-                <span className="font-semibold text-foreground">Advertising — $400:</span> Ad creative
+                <span className="font-semibold text-foreground">Advertising — $800:</span> Ad creative
                 production, copywriting, campaign build, audience and budget structure, daily monitoring,
                 creative testing and performance reporting.
               </p>
               <p className="mt-3">
-                <span className="font-semibold text-foreground">Nurture — $1,400:</span> AI calling,
+                <span className="font-semibold text-foreground">Nurture — $1,000:</span> AI calling,
                 conversational and SMS agents, email and voicemail sequences, calendar integration,
                 confirmation and reminder flows, plus human review of AI conversations.
               </p>
