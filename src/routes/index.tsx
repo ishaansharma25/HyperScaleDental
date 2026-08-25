@@ -177,6 +177,7 @@ function Index() {
                   "Live setup in 7 days",
                   "No long-term contracts",
                   "English + Spanish support",
+                  "Integrates with your PMS",
                 ].map((t) => (
                   <li
                     key={t}
