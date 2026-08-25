@@ -105,6 +105,9 @@ function Index() {
             <a href="#pricing" className="transition-colors hover:text-foreground">
               Pricing
             </a>
+            <a href="/multilingual-ai-phone-agent" className="transition-colors hover:text-foreground">
+              Multilingual AI
+            </a>
           </div>
           <a
             href={calendlyUrl}

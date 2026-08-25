@@ -10,33 +10,44 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as MultilingualAiPhoneAgentRouteImport } from './routes/multilingual-ai-phone-agent'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MultilingualAiPhoneAgentRoute =
+  MultilingualAiPhoneAgentRouteImport.update({
+    id: '/multilingual-ai-phone-agent',
+    path: '/multilingual-ai-phone-agent',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/multilingual-ai-phone-agent': typeof MultilingualAiPhoneAgentRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/multilingual-ai-phone-agent': typeof MultilingualAiPhoneAgentRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/multilingual-ai-phone-agent': typeof MultilingualAiPhoneAgentRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/multilingual-ai-phone-agent'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/multilingual-ai-phone-agent'
+  id: '__root__' | '/' | '/multilingual-ai-phone-agent'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  MultilingualAiPhoneAgentRoute: typeof MultilingualAiPhoneAgentRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +59,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/multilingual-ai-phone-agent': {
+      id: '/multilingual-ai-phone-agent'
+      path: '/multilingual-ai-phone-agent'
+      fullPath: '/multilingual-ai-phone-agent'
+      preLoaderRoute: typeof MultilingualAiPhoneAgentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  MultilingualAiPhoneAgentRoute: MultilingualAiPhoneAgentRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
