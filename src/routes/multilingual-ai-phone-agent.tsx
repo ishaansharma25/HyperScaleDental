@@ -96,6 +96,7 @@ function Logo() {
 function MultilingualPhoneAgent() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [activeTab, setActiveTab] = useState("multilingual");
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const toggleAudio = () => {
@@ -114,14 +115,50 @@ function MultilingualPhoneAgent() {
         <nav className="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
           <Logo />
           <div className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
-            <a href="/#problem" className="transition-colors hover:text-foreground">
+            <a
+              href="/#problem"
+              onClick={() => setActiveTab("problem")}
+              className={
+                activeTab === "problem"
+                  ? "rounded-full border border-primary/35 bg-primary/10 px-3 py-1.5 font-semibold text-primary"
+                  : "transition-colors hover:text-foreground"
+              }
+            >
               Problem
             </a>
-            <a href="/#engine" className="transition-colors hover:text-foreground">
+            <a
+              href="/#engine"
+              onClick={() => setActiveTab("engine")}
+              className={
+                activeTab === "engine"
+                  ? "rounded-full border border-primary/35 bg-primary/10 px-3 py-1.5 font-semibold text-primary"
+                  : "transition-colors hover:text-foreground"
+              }
+            >
               How It Works
             </a>
-            <a href="/#pricing" className="transition-colors hover:text-foreground">
+            <a
+              href="/#pricing"
+              onClick={() => setActiveTab("pricing")}
+              className={
+                activeTab === "pricing"
+                  ? "rounded-full border border-primary/35 bg-primary/10 px-3 py-1.5 font-semibold text-primary"
+                  : "transition-colors hover:text-foreground"
+              }
+            >
               Pricing
+            </a>
+            <a
+              href="/multilingual-ai-phone-agent"
+              onClick={() => setActiveTab("multilingual")}
+              aria-current="page"
+              className={
+                activeTab === "multilingual"
+                  ? "rounded-full border border-primary/35 bg-primary/10 px-3 py-1.5 font-semibold text-primary"
+                  : "transition-colors hover:text-foreground"
+              }
+            >
+              Multilingual AI
             </a>
           </div>
           <a

@@ -4,7 +4,7 @@ import { Reveal } from "@/components/Reveal";
 import { Typewriter } from "@/components/Typewriter";
 import { CountUp } from "@/components/CountUp";
 import { ChaosField } from "@/components/ChaosField";
-
+import { useState } from "react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -89,6 +89,8 @@ function Logo() {
 }
 
 function Index() {
+  const [activeTab, setActiveTab] = useState<string | null>(null);
+
   return (
     <div id="top" className="min-h-screen bg-background">
       {/* Nav */}
@@ -96,16 +98,48 @@ function Index() {
         <nav className="mx-auto flex h-24 max-w-6xl items-center justify-between px-6">
           <Logo />
           <div className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
-            <a href="#problem" className="transition-colors hover:text-foreground">
+            <a
+              href="#problem"
+              onClick={() => setActiveTab("problem")}
+              className={
+                activeTab === "problem"
+                  ? "rounded-full border border-primary/35 bg-primary/10 px-3 py-1.5 font-semibold text-primary"
+                  : "transition-colors hover:text-foreground"
+              }
+            >
               Problem
             </a>
-            <a href="#engine" className="transition-colors hover:text-foreground">
+            <a
+              href="#engine"
+              onClick={() => setActiveTab("engine")}
+              className={
+                activeTab === "engine"
+                  ? "rounded-full border border-primary/35 bg-primary/10 px-3 py-1.5 font-semibold text-primary"
+                  : "transition-colors hover:text-foreground"
+              }
+            >
               How It Works
             </a>
-            <a href="#pricing" className="transition-colors hover:text-foreground">
+            <a
+              href="#pricing"
+              onClick={() => setActiveTab("pricing")}
+              className={
+                activeTab === "pricing"
+                  ? "rounded-full border border-primary/35 bg-primary/10 px-3 py-1.5 font-semibold text-primary"
+                  : "transition-colors hover:text-foreground"
+              }
+            >
               Pricing
             </a>
-            <a href="/multilingual-ai-phone-agent" className="transition-colors hover:text-foreground">
+            <a
+              href="/multilingual-ai-phone-agent"
+              onClick={() => setActiveTab("multilingual")}
+              className={
+                activeTab === "multilingual"
+                  ? "rounded-full border border-primary/35 bg-primary/10 px-3 py-1.5 font-semibold text-primary"
+                  : "transition-colors hover:text-foreground"
+              }
+            >
               Multilingual AI
             </a>
           </div>
@@ -129,7 +163,6 @@ function Index() {
         <ChaosField />
         <div className="relative mx-auto max-w-6xl">
           <div className="mx-auto max-w-3xl text-center">
-
             <Reveal delay={80}>
               <h1 className="mt-7 text-3xl leading-tight font-bold tracking-tighter text-balance sm:text-5xl md:text-6xl lg:text-7xl">
                 <span className="flex flex-col items-center justify-center gap-1 font-display text-foreground">
@@ -192,7 +225,6 @@ function Index() {
               </ul>
             </Reveal>
           </div>
-
 
           {/* USP panel */}
           {/* <Reveal delay={300}>
@@ -316,11 +348,15 @@ function Index() {
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-1 text-primary">•</span>
-                  <span>Set up one tool, then expect your staff to manage the workflow manually.</span>
+                  <span>
+                    Set up one tool, then expect your staff to manage the workflow manually.
+                  </span>
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-1 text-primary">•</span>
-                  <span>Promote “AI” without real oversight, follow-up, or dental-specific logic.</span>
+                  <span>
+                    Promote “AI” without real oversight, follow-up, or dental-specific logic.
+                  </span>
                 </li>
               </ul>
             </div>
@@ -330,19 +366,27 @@ function Index() {
               <ul className="mt-6 space-y-4 text-sm leading-relaxed text-foreground/90">
                 <li className="flex gap-3">
                   <span className="mt-1 text-primary">✓</span>
-                  <span>End-to-end patient engine: ad creative, targeting, follow-up, and booking.</span>
+                  <span>
+                    End-to-end patient engine: ad creative, targeting, follow-up, and booking.
+                  </span>
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-1 text-primary">✓</span>
-                  <span>AI calls, SMS, recall campaigns, and live human oversight from one system.</span>
+                  <span>
+                    AI calls, SMS, recall campaigns, and live human oversight from one system.
+                  </span>
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-1 text-primary">✓</span>
-                  <span>Built for DSOs with PMS integrations and multi-location operations in mind.</span>
+                  <span>
+                    Built for DSOs with PMS integrations and multi-location operations in mind.
+                  </span>
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-1 text-primary">✓</span>
-                  <span>Fast launch, no long contracts, and a team that keeps performance improving.</span>
+                  <span>
+                    Fast launch, no long contracts, and a team that keeps performance improving.
+                  </span>
                 </li>
               </ul>
             </div>
@@ -355,8 +399,13 @@ function Index() {
               { label: "Recall & follow-up", value: "Automated" },
               { label: "Contracts", value: "No lock-in" },
             ].map((item) => (
-              <div key={item.label} className="rounded-2xl border border-border bg-surface p-5 text-center">
-                <p className="font-mono text-[10px] tracking-[0.18em] text-primary uppercase">{item.label}</p>
+              <div
+                key={item.label}
+                className="rounded-2xl border border-border bg-surface p-5 text-center"
+              >
+                <p className="font-mono text-[10px] tracking-[0.18em] text-primary uppercase">
+                  {item.label}
+                </p>
                 <p className="mt-3 font-display text-2xl font-bold tracking-tight">{item.value}</p>
               </div>
             ))}
@@ -441,7 +490,6 @@ function Index() {
         </div>
       </section>
 
-
       {/* Pricing */}
       <section id="pricing" className="px-6 py-24">
         <div className="mx-auto max-w-6xl">
@@ -464,7 +512,9 @@ function Index() {
                 <span className="font-display text-5xl font-bold tracking-tighter">$500</span>
                 <span className="text-muted-foreground">one-time</span>
               </div>
-              <p className="mt-4 text-muted-foreground">Onboarding, audit &amp; full system build</p>
+              <p className="mt-4 text-muted-foreground">
+                Onboarding, audit &amp; full system build
+              </p>
               <dl className="mt-8 divide-y divide-border border-y border-border text-sm">
                 <div className="flex items-center justify-between gap-4 py-4">
                   <dt className="text-muted-foreground">Management fee</dt>
@@ -481,7 +531,10 @@ function Index() {
               </dl>
             </Reveal>
 
-            <Reveal delay={100} className="relative rounded-3xl border border-primary/60 bg-surface p-8 shadow-glow">
+            <Reveal
+              delay={100}
+              className="relative rounded-3xl border border-primary/60 bg-surface p-8 shadow-glow"
+            >
               <span className="absolute -top-3 left-8 rounded-full bg-primary px-3 py-1 font-mono text-[10px] font-bold tracking-[0.14em] text-primary-foreground uppercase">
                 Second month onwards
               </span>
@@ -516,18 +569,20 @@ function Index() {
 
           <Reveal className="mt-10 grid gap-8 border-t border-border pt-8 text-sm text-muted-foreground md:grid-cols-2">
             <div>
-              <p className="font-display font-bold text-foreground">Plus your Meta ad budget, paid directly to Meta.</p>
+              <p className="font-display font-bold text-foreground">
+                Plus your Meta ad budget, paid directly to Meta.
+              </p>
               <p className="mt-2">
-                Your ad budget is never marked up. You set the monthly spend, it goes straight to Meta,
-                and every dollar of it buys reach.
+                Your ad budget is never marked up. You set the monthly spend, it goes straight to
+                Meta, and every dollar of it buys reach.
               </p>
             </div>
             <div>
               <p className="font-display font-bold text-foreground">What the monthly fee covers</p>
               <p className="mt-2">
-                <span className="font-semibold text-foreground">Advertising — $800:</span> Ad creative
-                production, copywriting, campaign build, audience and budget structure, daily monitoring,
-                creative testing and performance reporting.
+                <span className="font-semibold text-foreground">Advertising — $800:</span> Ad
+                creative production, copywriting, campaign build, audience and budget structure,
+                daily monitoring, creative testing and performance reporting.
               </p>
               <p className="mt-3">
                 <span className="font-semibold text-foreground">Nurture — $1,000:</span> AI calling,
