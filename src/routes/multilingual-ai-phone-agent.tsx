@@ -6,6 +6,7 @@ import {
   ChevronDown,
   Globe2,
   Languages,
+  Menu,
   MessageCircle,
   Pause,
   PhoneCall,
@@ -13,6 +14,7 @@ import {
   ShieldCheck,
   Sparkles,
   Volume2,
+  X,
 } from "lucide-react";
 import { useRef, useState } from "react";
 import { Reveal } from "@/components/Reveal";
@@ -83,7 +85,7 @@ export const Route = createFileRoute("/multilingual-ai-phone-agent")({
 
 function Logo() {
   return (
-    <a href="/" className="flex h-24 w-64 max-w-[52vw] items-center sm:max-w-none">
+    <a href="/" className="flex h-24 w-64 max-w-[44vw] items-center sm:max-w-[52vw] md:max-w-none">
       <img
         src="/HyperScale_Logo.png"
         alt="Hyperscale Ops AI Marketing Company"
@@ -97,6 +99,7 @@ function MultilingualPhoneAgent() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [activeTab, setActiveTab] = useState("multilingual");
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const toggleAudio = () => {
@@ -161,15 +164,49 @@ function MultilingualPhoneAgent() {
               Multilingual AI
             </a>
           </div>
+          <button
+            type="button"
+            aria-expanded={mobileNavOpen}
+            aria-controls="mobile-navigation"
+            aria-label={mobileNavOpen ? "Close navigation menu" : "Open navigation menu"}
+            onClick={() => setMobileNavOpen((isOpen) => !isOpen)}
+            className="ml-auto mr-2 grid size-10 place-items-center rounded-md border border-border-strong bg-surface text-foreground md:hidden"
+          >
+            {mobileNavOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+          </button>
           <a
             href={calendlyUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 font-display text-sm font-bold text-primary-foreground transition-transform hover:scale-[1.03] active:scale-95"
+            className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-primary px-3 py-2 font-display text-xs font-bold whitespace-nowrap text-primary-foreground transition-transform hover:scale-[1.03] active:scale-95 sm:gap-2 sm:px-4 sm:text-sm"
           >
             Book a Demo <ArrowRight className="size-4" />
           </a>
         </nav>
+        {mobileNavOpen && (
+          <div id="mobile-navigation" className="border-t border-border px-6 py-3 md:hidden">
+            <div className="mx-auto flex max-w-6xl flex-col text-sm text-muted-foreground">
+              {[
+                ["Problem", "/#problem", "problem"],
+                ["How It Works", "/#engine", "engine"],
+                ["Pricing", "/#pricing", "pricing"],
+                ["Multilingual AI", "/multilingual-ai-phone-agent", "multilingual"],
+              ].map(([label, href, tab]) => (
+                <a
+                  key={tab}
+                  href={href}
+                  onClick={() => {
+                    setActiveTab(tab);
+                    setMobileNavOpen(false);
+                  }}
+                  className={`border-b border-border py-3 last:border-b-0 ${activeTab === tab ? "font-semibold text-primary" : ""}`}
+                >
+                  {label}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
       </header>
 
       <main>
