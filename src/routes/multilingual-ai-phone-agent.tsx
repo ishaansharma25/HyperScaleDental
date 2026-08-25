@@ -156,6 +156,15 @@ function MultilingualPhoneAgent() {
                   See how it works
                 </a>
               </div>
+                <div className="mt-5">
+                  <p className="mb-2 font-mono text-[10px] tracking-[0.14em] text-muted-foreground uppercase">
+                    Hear a real patient call
+                  </p>
+                  <audio controls preload="metadata" className="h-10 w-full">
+                    <source src="/recording_pearl.wav" type="audio/wav" />
+                    Your browser does not support audio playback.
+                  </audio>
+                </div>
               <div className="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-sm text-muted-foreground">
                 <span className="inline-flex items-center gap-2">
                   <ShieldCheck className="size-4 text-primary" /> HIPAA-conscious workflows
