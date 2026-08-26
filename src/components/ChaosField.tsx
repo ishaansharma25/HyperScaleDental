@@ -9,7 +9,7 @@ type Note = {
 
 const notes: Note[] = [
   { text: "Missed call — 7:42pm", top: "4%", left: "1.5%", delay: "0s" },
-  { text: "\u201cI want to rescedule?\u201d", top: "10%", right: "2%", delay: "1.2s", mono: true },
+  { text: "\u201cI want to reschedule?\u201d", top: "10%", right: "2%", delay: "1.2s", mono: true },
   { text: "\u201cAre you still open?\u201d", top: "38%", left: "1%", delay: "2.1s" },
   { text: "new_patients_Q2.xlsx", top: "31%", right: "1.5%", delay: "0.6s", mono: true },
   { text: "No one picking up the call", top: "62%", left: "2%", delay: "1.7s" },
