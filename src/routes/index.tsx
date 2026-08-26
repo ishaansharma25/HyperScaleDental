@@ -54,23 +54,23 @@ const problems = [
 const steps = [
   {
     title: "We Run the Ads",
-    body: "We create videos and run Meta ads targeting Spanish-speaking patients. No more guessing.",
+    body: "We create the videos and run Meta ads that put your practice in front of multilingual patients in your area. No guessing, no boosting posts and hoping.",
   },
   {
     title: "We Optimize",
-    body: "If an ad underperforms, we change it — instantly. No waiting for your team to ask.",
+    body: "Complete hand-off. We take full control of your ad account and stay on it daily — when an ad slips, we fix it.",
   },
   {
     title: "We Talk to Them",
-    body: "AI calling agents + conversational AI + human oversight = every lead gets nurtured.",
+    body: "AI calling agents + conversational AI messaging + voicemail drops + human supervision = every lead gets nurtured. Nobody falls through the cracks.",
   },
   {
     title: "We Book",
-    body: "Appointment scheduled directly in your system. We confirm the patient shows up.",
+    body: "The appointment lands directly on your calendar. Then we work the confirmations until the patient actually walks in.",
   },
   {
     title: "We Monitor",
-    body: "Real people watch every AI interaction to ensure professionalism and accuracy.",
+    body: "Real people — our team — review every AI interaction for professionalism and accuracy.",
   },
 ];
 
@@ -495,19 +495,19 @@ function Index() {
             {[
               {
                 quote:
-                  "1,700 calls answered in 90 days and 184 appointments booked. That volume used to hit voicemail.",
+                  "1,700 leads called in 90 days, 184 appointments booked. That was my job before — sitting with a call list while patients waited at the desk and the phones kept ringing. Now it runs without me, and I actually get to be present for the people in the office.",
                 name: "Fabian Fernandez",
                 role: "Front Desk, DM Dentistry, San Ramon",
               },
               {
                 quote:
-                  "Our recall list went from a spreadsheet nobody touched to a queue that fills the schedule every week.",
+                  "Our recall list was a spreadsheet nobody touched. Everyone agreed it mattered, nobody had the hours. Now it's a queue that works itself — patients get called, texted, and booked without anyone on my team lifting a finger, and it fills the schedule every single week.",
                 name: "Dr. Sanjeev Sharma",
                 role: "2-dental Practice Owner, Bay Area",
               },
               {
                 quote:
-                  "The front desk finally stops mid-day. Calls get answered while they're with a patient in the chair.",
+                  "Calls get answered while my assistant is chairside with a patient, which never used to happen — we'd either interrupt treatment or lose the caller. New patients don't wait on hold anymore, and the ones who used to hang up and call the next practice on the list now end up on my schedule.",
                 name: "Dr. Kohli",
                 role: "Pearl Dental, San Jose",
               },
