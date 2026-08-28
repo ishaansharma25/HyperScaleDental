@@ -87,7 +87,7 @@ function Logo() {
   return (
     <a href="/" className="flex h-24 w-64 max-w-[44vw] items-center sm:max-w-[52vw] md:max-w-none">
       <img
-        src="/HyperScale_Logo.png"
+        src="/ew_logo.png"
         alt="Hyperscale Ops AI Marketing Company"
         className="max-h-full max-w-full object-contain object-left"
       />
